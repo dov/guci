@@ -1,0 +1,5 @@
+                         guci - version 0.0.1
+                  Dov Grobgeld <dov.grobgeld@weizmann.ac.il>
+
+guci is an inspector for unicode. It shows the unicode code point
+as the cursor moves over the characters.

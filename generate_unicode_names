@@ -1,0 +1,30 @@
+#!/usr/bin/perl
+
+print<<__;
+#include <stdio.h>
+#include <glib.h>
+#include "unicode_names.h"
+
+gchar **uniname;
+
+void create_uninames() {
+    uniname = g_new0(gchar*, 0x10000);
+
+__
+
+
+while(<>) {
+    my($hex, $name) = split(/\;/);
+
+    print "    uniname[0x$hex] = \"" . canolize($name) . "\";\n";
+}
+
+print "}\n";
+
+sub canolize {
+    my $s = shift;
+
+    $s = "\L$s";
+    $s=~ s/\w+/"\u$&"/ge;
+    return $s;
+}
