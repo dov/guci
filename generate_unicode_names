@@ -8,7 +8,7 @@ print<<__;
 gchar **uniname;
 
 void create_uninames() {
-    uniname = g_new0(gchar*, 0x10000);
+    uniname = g_new0(gchar*, 0x10FFFD);
 
 __
 
